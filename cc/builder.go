@@ -371,7 +371,6 @@ func TransformSourceToObj(ctx android.ModuleContext, subdir string, srcFiles and
 			continue
 		}
 
-		var extraFlags string
 		if flags.clang {
 			switch ccCmd {
 			case "gcc":
@@ -385,6 +384,7 @@ func TransformSourceToObj(ctx android.ModuleContext, subdir string, srcFiles and
 
 		ccDesc := ccCmd
 
+		var extraFlags string
 		if flags.clang {
 			if ctx.Device() && config.SDClang {
 				ccCmd = "${config.SDClangBin}/" + ccCmd
