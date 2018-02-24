@@ -40,7 +40,8 @@ func init() {
 			originalEnv[env[:idx]] = env[idx+1:]
 		}
 	}
-	os.Clearenv()
+        //Fix Later
+	//os.Clearenv()
 }
 
 func EnvSingleton() blueprint.Singleton {
